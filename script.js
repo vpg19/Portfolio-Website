@@ -187,30 +187,40 @@ document.addEventListener("DOMContentLoaded", () => {
     // -------------------------------------------------------------------------
     function initTextScramble() {
         const glitchElements = document.querySelectorAll(".glitch-hover");
-
+ 
         glitchElements.forEach(el => {
-            el.addEventListener("mouseenter", function() {
-                const chars = "01010101_#X$/%&?";
-                let count = 0;
-                const originalText = this.getAttribute("data-value");
-
-                const scrambleInterval = setInterval(() => {
-                    const scrambled = originalText
+            const originalText = el.getAttribute("data-value") || el.innerText;
+            const letters = "01010101_#X$/%&?";
+            let interval = null;
+ 
+            el.addEventListener("mouseenter", () => {
+                let iteration = 0;
+                clearInterval(interval);
+ 
+                interval = setInterval(() => {
+                    el.innerText = originalText
                         .split("")
-                        .map(char => {
-                            if (char === " ") return " ";
-                            return chars[Math.floor(Math.random() * chars.length)];
+                        .map((char, index) => {
+                            if (index < iteration) {
+                                return originalText[index];
+                            }
+                            // Random binary or symbol characters
+                            return letters[Math.floor(Math.random() * letters.length)];
                         })
                         .join("");
-
-                    this.textContent = scrambled;
-                    count++;
-
-                    if (count > 8) {
-                        clearInterval(scrambleInterval);
-                        this.textContent = originalText;
+ 
+                    if (iteration >= originalText.length) {
+                        clearInterval(interval);
+                        el.innerText = originalText;
                     }
-                }, 60);
+ 
+                    iteration += 1 / 3;
+                }, 25);
+            });
+ 
+            el.addEventListener("mouseleave", () => {
+                clearInterval(interval);
+                el.innerText = originalText;
             });
         });
     }
