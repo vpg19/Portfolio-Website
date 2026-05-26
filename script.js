@@ -187,16 +187,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // -------------------------------------------------------------------------
     function initTextScramble() {
         const glitchElements = document.querySelectorAll(".glitch-hover");
- 
+
         glitchElements.forEach(el => {
             const originalText = el.getAttribute("data-value") || el.innerText;
             const letters = "01010101_#X$/%&?";
             let interval = null;
- 
+
             el.addEventListener("mouseenter", () => {
                 let iteration = 0;
                 clearInterval(interval);
- 
+
                 interval = setInterval(() => {
                     el.innerText = originalText
                         .split("")
@@ -208,16 +208,16 @@ document.addEventListener("DOMContentLoaded", () => {
                             return letters[Math.floor(Math.random() * letters.length)];
                         })
                         .join("");
- 
+
                     if (iteration >= originalText.length) {
                         clearInterval(interval);
                         el.innerText = originalText;
                     }
- 
+
                     iteration += 1 / 3;
                 }, 25);
             });
- 
+
             el.addEventListener("mouseleave", () => {
                 clearInterval(interval);
                 el.innerText = originalText;
@@ -425,7 +425,7 @@ function handleFormSubmit(event) {
 
     // ── Animated pre-send log lines
     const preSteps = [
-        { text: "ESTABLISHING SMTP RELAY...",           color: "var(--text-muted)" },
+        { text: "ESTABLISHING BREVO SMTP RELAY...",           color: "var(--text-muted)" },
         { text: "ENCRYPTING PAYLOAD [AES-256]...",             color: "var(--text-muted)" },
         { text: `ROUTING → ${OWNER_EMAIL}`,                   color: "var(--cyber-cyan)"  },
         { text: `TRANSMITTING PACKET FROM ${senderEmail}...`,  color: "var(--text-muted)" },
@@ -475,7 +475,7 @@ async function sendEmail(senderName, senderEmail, subject, message) {
     // Sign up at https://web3forms.com to get your access key
     
     const payload = {
-        access_key: "fd5baab0-79eb-490d-a6f3-1e5ab7717754", // Replace with your Web3Forms key from https://web3forms.com
+        access_key: "YOUR_WEB3FORMS_KEY", // Replace with your Web3Forms key from https://web3forms.com
         name: senderName,
         email: senderEmail,
         subject: `[VPG Portfolio] ${subject}`,
