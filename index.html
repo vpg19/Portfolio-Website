@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Vansh Prakash Gupta - B.Tech CSE (AI & Robotics) Student at VIT Chennai. Embedded Systems Developer, Data Engineer & Automation Enthusiast. Showcasing NFC-Enabled Wireless Mouse Patent and open source projects.">
+    <meta name="author" content="Vansh Prakash Gupta">
+    <title>VANSH PRAKASH GUPTA // BINARY PORTFOLIO</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&family=JetBrains+Mono:wght@100;300;400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Smooth Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Scanline CRT Effect Overlay -->
+    <div class="scanlines"></div>
+
+    <!-- Interactive Falling Binary Code Rain Background -->
+    <canvas id="matrix-canvas"></canvas>
+
+    <!-- Main Loader / System Boot Simulation -->
+    <div id="system-boot-overlay">
+        <div class="boot-terminal-box">
+            <div class="boot-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="title">VPG_SYS_BOOTLOADER_v2.06.6.bin</span>
+            </div>
+            <div class="boot-logs" id="boot-logs"></div>
+        </div>
+    </div>
+
+    <!-- App Wrapper (hidden until boot completed) -->
+    <div id="app-container" class="hidden-fade">
+        
+        <!-- Header & Nav Bar -->
+        <header class="futuristic-navbar">
+            <div class="logo-container">
+                <a href="#home" class="logo-text glitch-hover" data-value="VPG.SYS">VPG.SYS</a>
+                <span class="status-indicator">
+                    <span class="blink-dot"></span>
+                    <span class="status-label">STATUS: 01001011 (OK)</span>
+                </span>
+            </div>
+            <nav class="nav-links">
+                <a href="#home" class="nav-link-item active"><code>[//home]</code></a>
+                <a href="#about" class="nav-link-item"><code>[//about]</code></a>
+                <a href="#terminal-section" class="nav-link-item"><code>[//terminal]</code></a>
+                <a href="#patent" class="nav-link-item"><code>[//patent]</code></a>
+                <a href="#projects" class="nav-link-item"><code>[//projects]</code></a>
+                <a href="#skills" class="nav-link-item"><code>[//skills]</code></a>
+                <a href="#contact" class="nav-link-item"><code>[//contact]</code></a>
+            </nav>
+            <div class="navbar-right">
+                <a href="Vansh Resume.pdf" target="_blank" class="resume-dl-btn hover-trigger">
+                    <i class="fa-solid fa-terminal"></i> RESUME.sh
+                </a>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home" class="section hero-section">
+            <div class="hero-content">
+                <div class="tagline-badge"><code>[INITIALIZING CONNECTION...]</code></div>
+                <h1 class="hero-title glitch-hover" data-value="VANSH PRAKASH GUPTA" id="main-name">VANSH PRAKASH GUPTA</h1>
+                <h2 class="hero-subtitle">
+                    &gt;_ B.TECH <span class="accent-text text-glow">AI & ROBOTICS</span> STUDENT @ VIT CHENNAI
+                </h2>
+                
+                <div class="typing-container">
+                    <span class="console-symbol">&gt;</span> 
+                    <span id="dynamic-typing" class="typing-text"></span>
+                    <span class="console-cursor"></span>
+                </div>
+
+                <p class="hero-desc">
+                    Experienced in building database applications, automated workflows, and digital/hardware control systems. Passionate about data engineering, embedded systems, and AI-driven robotic environments.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#terminal-section" class="btn-primary hover-trigger">
+                        <span class="btn-text">INITIATE_PROBE()</span>
+                        <span class="btn-icon">&gt;</span>
+                    </a>
+                    <a href="#patent" class="btn-secondary hover-trigger">
+                        <span class="btn-text">VIEW_PATENT()</span>
+                        <span class="btn-icon"><i class="fa-regular fa-lightbulb"></i></span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Dashboard Mock Panel -->
+            <div class="hero-dashboard-panel">
+                <div class="panel-header">
+                    <span class="panel-title"><i class="fa-solid fa-microchip"></i> COGNITIVE_DATA_FEED</span>
+                    <span class="panel-tag">LIVE_MONITOR</span>
+                </div>
+                <div class="panel-body">
+                    <div class="dashboard-metric">
+                        <span class="metric-label">SYS_LOAD:</span>
+                        <div class="metric-bar"><div class="bar-fill" style="width: 88.6%;"></div></div>
+                        <span class="metric-value">VIT CGPA: 8.86</span>
+                    </div>
+                    <div class="dashboard-metric">
+                        <span class="metric-label">DATABASE:</span>
+                        <span class="metric-status online">SQL / MySQL / POSTGRES</span>
+                    </div>
+                    <div class="dashboard-metric">
+                        <span class="metric-label">EMBEDDED:</span>
+                        <span class="metric-status ok">ESP32 / RC522 / BLE</span>
+                    </div>
+                    <div class="dashboard-metric">
+                        <span class="metric-label">CLUBS:</span>
+                        <span class="metric-status warning">ANDROID_CLUB // LINUX_CLUB</span>
+                    </div>
+                    <div class="console-block">
+                        <span class="c-line">&gt; guptavanshprakash@gmail.com</span>
+                        <span class="c-line">&gt; +91-9549396933</span>
+                        <span class="c-line">&gt; github.com/vpg19</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="section about-section">
+            <div class="section-header-box">
+                <span class="sec-num">01.</span>
+                <h2 class="section-title text-glow">ABOUT_SYSTEM</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <div class="about-grid">
+                <div class="bio-panel glass-card">
+                    <div class="card-topbar">
+                        <span class="folder-name"><i class="fa-regular fa-folder-open"></i> profile_data.json</span>
+                    </div>
+                    <div class="card-content">
+                        <p class="bio-paragraph">
+                            I am a sophomore <span class="highlight-green">Computer Science & Engineering (AI & Robotics)</span> student at <span class="highlight-cyan">Vellore Institute of Technology (VIT) Chennai</span>. My core skill set revolves around developing database-driven software applications, high-performance automation workflows, and analytical visualization panels. 
+                        </p>
+                        <p class="bio-paragraph">
+                            Currently bridging the gap between digital software networks and raw micro-controllers, I design smart dual-protocol systems that combine Bluetooth Low Energy (BLE) transmissions with NFC proximity components. I'm highly passionate about data engineering pipelines, embedded system design, and deep learning algorithms.
+                        </p>
+                        
+                        <div class="personal-details-grid">
+                            <div class="detail-item"><strong>[LOC]</strong> Chennai / Jaipur, India</div>
+                            <div class="detail-item"><strong>[ROLE]</strong> Full-Stack Automation & Embedded Developer</div>
+                            <div class="detail-item"><strong>[EDU]</strong> CSE (AI & Robotics) @ VIT</div>
+                            <div class="detail-item"><strong>[GPA]</strong> 8.86 / 10.0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education & Club Timelines -->
+                <div class="timeline-panel glass-card">
+                    <div class="card-topbar">
+                        <span class="folder-name"><i class="fa-solid fa-code-fork"></i> education_timeline.sh</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">2024 - 2028</div>
+                                <div class="timeline-title">B.Tech in Computer Science & Engineering (AI & Robotics)</div>
+                                <div class="timeline-institution">Vellore Institute of Technology, Chennai</div>
+                                <p class="timeline-desc">Secured CGPA: 8.86/10. Active learning in Algorithms, Python data visualization, SQL Databases, and robotic controls.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">2012 - 2024</div>
+                                <div class="timeline-title">Senior Secondary Education (12th Grade)</div>
+                                <div class="timeline-institution">St. Xavier's Sr. Sec. School, Jaipur</div>
+                                <p class="timeline-desc">Graduated with a score of 91%. Focus on Physics, Chemistry, and Mathematics.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clubs-panel glass-card">
+                    <div class="card-topbar">
+                        <span class="folder-name"><i class="fa-solid fa-users"></i> student_organizations.log</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="timeline">
+                            <div class="timeline-item active-club">
+                                <div class="timeline-dot pulsing"></div>
+                                <div class="timeline-date">Apr 2025 - Present</div>
+                                <div class="timeline-title">Operations Member - Android Club</div>
+                                <p class="timeline-desc">Streamlining event planning pipelines, managing computational resources, and coordinating technical workshops. Supporting development projects and fostering collaborative environments for new members.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">Sep 2024 - Oct 2025</div>
+                                <div class="timeline-title">Technical Member - Linux Club</div>
+                                <p class="timeline-desc">Delivered technical workshops on Linux distributions, shell operations, command-line utility configurations, and open-source systems. Contributed to open curriculums for Linux workshops.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Terminal Section -->
+        <section id="terminal-section" class="section terminal-section">
+            <div class="section-header-box">
+                <span class="sec-num">02.</span>
+                <h2 class="section-title text-glow">INTERACTIVE_CLI_CONSOLE</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <div class="terminal-container hover-trigger" id="interactive-terminal">
+                <div class="terminal-navbar">
+                    <div class="buttons">
+                        <span class="t-dot red"></span>
+                        <span class="t-dot yellow"></span>
+                        <span class="t-dot green"></span>
+                    </div>
+                    <div class="t-title">vansh@vpg-sys:~ (ssh_node)</div>
+                    <div class="terminal-stats">UTF-8</div>
+                </div>
+                <div class="terminal-body" id="terminal-body">
+                    <div class="terminal-welcome">
+                        <pre class="ascii-art">
+██╗   ██╗██████╗  ██████╗ 
+██║   ██║██╔══██╗██╔════╝ 
+██║   ██║██████╔╝██║  ███╗
+╚██╗ ██╔╝██╔═══╝ ██║   ██║
+ ╚████╔╝ ██║     ╚██████╔╝
+  ╚═══╝  ╚═╝      ╚═════╝ 
+                        </pre>
+                        <p class="welcome-text">WELCOME TO VPG.SYS COMPILATION TERMINAL (v2.0.6-release).</p>
+                        <p class="welcome-subtext">Type <span class="highlight-green">help</span> to list active commands or scan system records.</p>
+                        <p class="welcome-time">CURRENT SESSION LOAD TIME: 2026-05-21</p>
+                        <div class="divider">========================================================</div>
+                    </div>
+                    
+                    <div class="terminal-history" id="terminal-history"></div>
+                    
+                    <div class="terminal-input-line">
+                        <span class="prompt-user">vansh@vpg-sys:~$</span>
+                        <input type="text" id="terminal-input" autofocus autocomplete="off" spellcheck="false">
+                        <span class="input-carat"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="terminal-tip">
+                <code>[PROTIP: click anywhere inside the console area to automatically focus input]</code>
+            </div>
+        </section>
+
+        <!-- Patent Highlight Section -->
+        <section id="patent" class="section patent-section">
+            <div class="section-header-box">
+                <span class="sec-num">03.</span>
+                <h2 class="section-title text-glow">PATENT_DIAGNOSTICS</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <div class="patent-grid">
+                <!-- SVG Wireframe Blueprint of Mouse -->
+                <div class="blueprint-card glass-card">
+                    <div class="card-topbar">
+                        <span class="folder-name"><i class="fa-solid fa-drafting-compass"></i> blueprint_wireframe.dwg</span>
+                        <span class="blueprint-tag">PATENT_PENDING</span>
+                    </div>
+                    <div class="blueprint-viewer">
+                        <svg viewBox="0 0 400 300" class="blueprint-svg">
+                            <!-- Mouse Shell -->
+                            <path d="M 200,30 C 140,30 110,90 110,170 C 110,250 140,270 200,270 C 260,270 290,250 290,170 C 290,90 260,30 200,30 Z" fill="none" stroke="#00ff66" stroke-width="2" class="blueprint-shell" />
+                            
+                            <!-- Scroll Wheel -->
+                            <rect x="190" y="60" width="20" height="40" rx="3" fill="none" stroke="#00f0ff" stroke-width="2" />
+                            
+                            <!-- Divider lines -->
+                            <line x1="200" y1="30" x2="200" y2="100" stroke="#00ff66" stroke-dasharray="4,4" />
+                            <line x1="110" y1="130" x2="290" y2="130" stroke="#00ff66" stroke-dasharray="4,4" />
+
+                            <!-- Internals Hotspots -->
+                            <!-- ESP32 -->
+                            <g class="hotspot" id="hotspot-esp32" data-module="esp32">
+                                <rect x="140" y="150" width="40" height="40" rx="2" fill="rgba(0,255,102,0.1)" stroke="#00ff66" stroke-width="1.5" class="blueprint-node" />
+                                <text x="160" y="175" fill="#00ff66" font-size="8" text-anchor="middle" font-family="monospace">ESP32</text>
+                                <circle cx="160" cy="150" r="4" class="pulse-circle" />
+                            </g>
+                            
+                            <!-- RC522 NFC -->
+                            <g class="hotspot" id="hotspot-nfc" data-module="nfc">
+                                <rect x="220" y="150" width="40" height="40" rx="2" fill="rgba(0,240,255,0.1)" stroke="#00f0ff" stroke-width="1.5" class="blueprint-node" />
+                                <text x="240" y="175" fill="#00f0ff" font-size="8" text-anchor="middle" font-family="monospace">NFC</text>
+                                <circle cx="240" cy="150" r="4" class="pulse-circle" />
+                            </g>
+                            
+                            <!-- BLE Transmitter -->
+                            <g class="hotspot" id="hotspot-ble" data-module="ble">
+                                <circle cx="200" cy="220" r="15" fill="rgba(0,255,102,0.1)" stroke="#00ff66" stroke-width="1.5" class="blueprint-node" />
+                                <text x="200" y="223" fill="#00ff66" font-size="8" text-anchor="middle" font-family="monospace">BLE</text>
+                                <circle cx="200" cy="220" r="3" class="pulse-circle" />
+                            </g>
+
+                            <!-- Dimension lines -->
+                            <line x1="90" y1="30" x2="90" y2="270" stroke="#00ff66" stroke-width="1" />
+                            <line x1="85" y1="30" x2="95" y2="30" stroke="#00ff66" stroke-width="1" />
+                            <line x1="85" y1="270" x2="95" y2="270" stroke="#00ff66" stroke-width="1" />
+                            <text x="75" y="155" fill="#00ff66" font-size="8" transform="rotate(-90 75 155)" text-anchor="middle" font-family="monospace">120 mm</text>
+                        </svg>
+                        <div class="blueprint-instructions">
+                            <code>[INSTRUCTION: Click on ESP32, NFC, or BLE micro-chips in the blueprint to load tech modules]</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Patent Spec Information -->
+                <div class="spec-card glass-card">
+                    <div class="card-topbar">
+                        <span class="folder-name"><i class="fa-solid fa-microchip"></i> device_specifications.md</span>
+                    </div>
+                    <div class="card-content" id="patent-spec-content">
+                        <h3 class="patent-device-name">NFC-Enabled Wireless Mouse</h3>
+                        <div class="patent-meta">
+                            <span class="meta-tag">PATENT STATE: PENDING</span>
+                            <span class="meta-tag">HARDWARE CORE: C++</span>
+                            <span class="meta-tag">PROTOCOL: ESP-NOW / BLE</span>
+                        </div>
+                        
+                        <p class="patent-desc">
+                            An innovative hardware device combining high-fidelity Bluetooth Low Energy (BLE) wireless mouse control with an embedded clipboard-to-NFC data transfer infrastructure.
+                        </p>
+                        
+                        <div class="spec-tabs">
+                            <button class="spec-tab active" data-tab="summary">CORE_ARCHITECTURE</button>
+                            <button class="spec-tab" data-tab="hardware">HARDWARE_STACK</button>
+                            <button class="spec-tab" data-tab="firmware">FIRMWARE_LOGIC</button>
+                        </div>
+                        
+                        <div class="tab-content active" id="tab-summary">
+                            <ul class="spec-list">
+                                <li><strong>Dual-Protocol Coordination:</strong> Connects to PCs via wireless HID profiles over Bluetooth, while coordinating peripheral read triggers using local hardware channels.</li>
+                                <li><strong>Seamless Clipboard-to-NFC:</strong> Monitors local system clipboards via lightweight Python backgrounds, translating raw strings into transmittable bytes pushed into NFC memory.</li>
+                                <li><strong>Dynamic Data Transfer:</strong> Real-time hardware integration enables secure localized authentication and instant credential transfer by tapping cards onto the mouse.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tab-content" id="tab-hardware">
+                            <table class="spec-table">
+                                <tr>
+                                    <th>MODULE</th>
+                                    <th>SPECIFICATION</th>
+                                    <th>ROLE</th>
+                                </tr>
+                                <tr>
+                                    <td>ESP32 WROOM</td>
+                                    <td>Dual-core Tensilica LX6</td>
+                                    <td>Core Firmware execution & BLE stack hosting</td>
+                                </tr>
+                                <tr>
+                                    <td>MFRC522</td>
+                                    <td>13.56 MHz RFID / SPI Channel</td>
+                                    <td>Proximity NFC tag read & write operations</td>
+                                </tr>
+                                <tr>
+                                    <td>Ntag213 / Tag</td>
+                                    <td>144 bytes user memory</td>
+                                    <td>Physical target container for clipboard strings</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="tab-content" id="tab-firmware">
+                            <pre class="firmware-code-block"><code>// BLE Mouse HID & SPI RFID Init Sequence
+#include <SPI.h>
+#include <MFRC522.h>
+#include <BleMouse.h>
+
+#define SS_PIN  5
+#define RST_PIN 17
+
+MFRC522 mfrc522(SS_PIN, RST_PIN);
+BleMouse bleMouse("VPG-NFC-Mouse", "VIT-Robotics");
+
+void setup() {
+  SPI.begin();
+  mfrc522.PCD_Init();
+  bleMouse.begin();
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Grid Section -->
+        <section id="projects" class="section projects-section">
+            <div class="section-header-box">
+                <span class="sec-num">04.</span>
+                <h2 class="section-title text-glow">SYSTEM_REPOSITORIES</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <!-- Custom Filters -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">ALL_REPOS</button>
+                <button class="filter-btn" data-filter="python">PYTHON</button>
+                <button class="filter-btn" data-filter="embedded">EMBEDDED</button>
+                <button class="filter-btn" data-filter="dart">DART/FLUTTER</button>
+                <button class="filter-btn" data-filter="automation">AUTOMATION</button>
+            </div>
+
+            <!-- Projects Cards Deck -->
+            <div class="projects-grid">
+                <!-- Project 1: Store Management -->
+                <div class="project-card glass-card" data-languages="python">
+                    <div class="card-topbar">
+                        <span class="folder-name"><i class="fa-solid fa-box-archive"></i> store-management-sys</span>
+                        <span class="lang-tag">python // mysql</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="proj-title">Departmental Store Management</h3>
+                        <p class="proj-desc">
+                            Full-stack retail application managing local inventories, client databases, automated dynamic invoices, and stock limits. Integrates Python core logic with interactive matplotlib visualization dashboards.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="t-tag">Python</span>
+                            <span class="t-tag">MySQL</span>
+                            <span class="t-tag">Matplotlib</span>
+                            <span class="t-tag">GUI</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/vpg19/Departmental-Store-Management" target="_blank" class="github-link hover-trigger">
+                                <i class="fa-brands fa-github"></i> VIEW_SOURCE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Spotify Playlist Generator -->
+                <div class="project-card glass-card" data-languages="python automation">
+                    <div class="card-topbar">
+                        <span class="folder-name"><i class="fa-solid fa-music"></i> top-100-playlist-gen</span>
+                        <span class="lang-tag">python // automation</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="proj-title">Spotify Playlist Scraper & Gen</h3>
+                        <p class="proj-desc">
+                            Web scraping pipeline targeting Billboard Hot 100 historical charts. Automatically curates private Spotify playlists using Spotipy APIs, Beautiful Soup parsing, and tokenized OAuth2 parameters.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="t-tag">Python</span>
+                            <span class="t-tag">Spotipy API</span>
+                            <span class="t-tag">BeautifulSoup</span>
+                            <span class="t-tag">OAuth2</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/vpg19/Top-100-Songs" target="_blank" class="github-link hover-trigger">
+                                <i class="fa-brands fa-github"></i> VIEW_SOURCE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Match Game -->
+                <div class="project-card glass-card" data-languages="dart">
+                    <div class="card-topbar">
+                        <span class="folder-name"><i class="fa-solid fa-gamepad"></i> memory-match-game</span>
+                        <span class="lang-tag">dart // flutter</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="proj-title">Memory Card Match Game</h3>
+                        <p class="proj-desc">
+                            A highly polished multi-screen mobile game. Features custom card grids, custom difficulty configurations, real-time moves, statistics trackers, state managers, and fluid visual animations.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="t-tag">Flutter</span>
+                            <span class="t-tag">Dart</span>
+                            <span class="t-tag">UI/UX</span>
+                            <span class="t-tag">State-Management</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/vpg19/match_game" target="_blank" class="github-link hover-trigger">
+                                <i class="fa-brands fa-github"></i> VIEW_SOURCE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Password Manager -->
+                <div class="project-card glass-card" data-languages="python">
+                    <div class="card-topbar">
+                        <span class="folder-name"><i class="fa-solid fa-key"></i> local-password-mgr</span>
+                        <span class="lang-tag">python // tkinter</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="proj-title">Secure GUI Password Manager</h3>
+                        <p class="proj-desc">
+                            A secure local graphical vault built to generate complex passwords, save login entries securely inside local text structures, and retrieve them on demand with search-matching functions.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="t-tag">Python</span>
+                            <span class="t-tag">Tkinter GUI</span>
+                            <span class="t-tag">Encryption</span>
+                            <span class="t-tag">Local Vault</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/vpg19/Password-Manager" target="_blank" class="github-link hover-trigger">
+                                <i class="fa-brands fa-github"></i> VIEW_SOURCE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Cookie Clicker Bot -->
+                <div class="project-card glass-card" data-languages="python automation">
+                    <div class="card-topbar">
+                        <span class="folder-name"><i class="fa-solid fa-robot"></i> clicker-automation-bot</span>
+                        <span class="lang-tag">python // selenium</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="proj-title">Cookie Clicker Selenium Bot</h3>
+                        <p class="proj-desc">
+                            An automated bot compiled to play web games. Uses headless selenium controls to click elements, monitor current cookies score, and automatically buy hardware/upgrades according to optimal math cycles.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="t-tag">Python</span>
+                            <span class="t-tag">Selenium</span>
+                            <span class="t-tag">Game Loop</span>
+                            <span class="t-tag">Automation</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/vpg19/Cookie-Clicker-Bot" target="_blank" class="github-link hover-trigger">
+                                <i class="fa-brands fa-github"></i> VIEW_SOURCE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Pomodoro Timer -->
+                <div class="project-card glass-card" data-languages="python automation">
+                    <div class="card-topbar">
+                        <span class="folder-name"><i class="fa-solid fa-hourglass-half"></i> pomodoro-productivity</span>
+                        <span class="lang-tag">python // tkinter</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="proj-title">Pomodoro productivity timer</h3>
+                        <p class="proj-desc">
+                            A productivity dashboard supporting customized work-break timers, automated notification alerts, sound triggers, and statistics logs supporting intensive focus cycles.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="t-tag">Python</span>
+                            <span class="t-tag">Tkinter</span>
+                            <span class="t-tag">Timer Loop</span>
+                            <span class="t-tag">productivity</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/vpg19/Pomodoro" target="_blank" class="github-link hover-trigger">
+                                <i class="fa-brands fa-github"></i> VIEW_SOURCE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Core Section -->
+        <section id="skills" class="section skills-section">
+            <div class="section-header-box">
+                <span class="sec-num">05.</span>
+                <h2 class="section-title text-glow">SKILL_MATRIX_REGISTRY</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Group 1: Languages -->
+                <div class="skills-group-card glass-card">
+                    <div class="card-topbar">
+                        <span class="folder-name"><i class="fa-solid fa-code"></i> programming_languages.sys</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="skills-bars-container">
+                            <div class="skill-bar-wrapper">
+                                <div class="skill-meta">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-level">95%</span>
+                                </div>
+                                <div class="bar-bg"><div class="bar-loaded" style="width: 95%;"></div></div>
+                            </div>
+                            <div class="skill-bar-wrapper">
+                                <div class="skill-meta">
+                                    <span class="skill-name">C/C++</span>
+                                    <span class="skill-level">85%</span>
+                                </div>
+                                <div class="bar-bg"><div class="bar-loaded" style="width: 85%;"></div></div>
+                            </div>
+                            <div class="skill-bar-wrapper">
+                                <div class="skill-meta">
+                                    <span class="skill-name">Java</span>
+                                    <span class="skill-level">80%</span>
+                                </div>
+                                <div class="bar-bg"><div class="bar-loaded" style="width: 80%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 2: Databases & Backend -->
+                <div class="skills-group-card glass-card">
+                    <div class="card-topbar">
+                        <span class="folder-name"><i class="fa-solid fa-database"></i> databases_backend.sys</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="skills-bars-container">
+                            <div class="skill-bar-wrapper">
+                                <div class="skill-meta">
+                                    <span class="skill-name">MySQL</span>
+                                    <span class="skill-level">90%</span>
+                                </div>
+                                <div class="bar-bg"><div class="bar-loaded" style="width: 90%;"></div></div>
+                            </div>
+                            <div class="skill-bar-wrapper">
+                                <div class="skill-meta">
+                                    <span class="skill-name">PostgreSQL</span>
+                                    <span class="skill-level">80%</span>
+                                </div>
+                                <div class="bar-bg"><div class="bar-loaded" style="width: 80%;"></div></div>
+                            </div>
+                            <div class="skill-bar-wrapper">
+                                <div class="skill-meta">
+                                    <span class="skill-name">Flask Backend</span>
+                                    <span class="skill-level">75%</span>
+                                </div>
+                                <div class="bar-bg"><div class="bar-loaded" style="width: 75%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 3: Embedded Systems -->
+                <div class="skills-group-card glass-card">
+                    <div class="card-topbar">
+                        <span class="folder-name"><i class="fa-solid fa-microchip"></i> embedded_systems.sys</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="skills-bars-container">
+                            <div class="skill-bar-wrapper">
+                                <div class="skill-meta">
+                                    <span class="skill-name">Arduino IDE</span>
+                                    <span class="skill-level">90%</span>
+                                </div>
+                                <div class="bar-bg"><div class="bar-loaded" style="width: 90%;"></div></div>
+                            </div>
+                            <div class="skill-bar-wrapper">
+                                <div class="skill-meta">
+                                    <span class="skill-name">ESP32 Development</span>
+                                    <span class="skill-level">85%</span>
+                                </div>
+                                <div class="bar-bg"><div class="bar-loaded" style="width: 85%;"></div></div>
+                            </div>
+                            <div class="skill-bar-wrapper">
+                                <div class="skill-meta">
+                                    <span class="skill-name">RFID / NFC Protocols</span>
+                                    <span class="skill-level">80%</span>
+                                </div>
+                                <div class="bar-bg"><div class="bar-loaded" style="width: 80%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 4: Testing & Systems -->
+                <div class="skills-group-card glass-card">
+                    <div class="card-topbar">
+                        <span class="folder-name"><i class="fa-solid fa-terminal"></i> testing_systems.sys</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="skills-bars-container">
+                            <div class="skill-bar-wrapper">
+                                <div class="skill-meta">
+                                    <span class="skill-name">Selenium Automation</span>
+                                    <span class="skill-level">85%</span>
+                                </div>
+                                <div class="bar-bg"><div class="bar-loaded" style="width: 85%;"></div></div>
+                            </div>
+                            <div class="skill-bar-wrapper">
+                                <div class="skill-meta">
+                                    <span class="skill-name">Beautiful Soup Scraping</span>
+                                    <span class="skill-level">90%</span>
+                                </div>
+                                <div class="bar-bg"><div class="bar-loaded" style="width: 90%;"></div></div>
+                            </div>
+                            <div class="skill-bar-wrapper">
+                                <div class="skill-meta">
+                                    <span class="skill-name">Linux Core & Shell</span>
+                                    <span class="skill-level">80%</span>
+                                </div>
+                                <div class="bar-bg"><div class="bar-loaded" style="width: 80%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="section-header-box">
+                <span class="sec-num">06.</span>
+                <h2 class="section-title text-glow">TRANSMIT_DATAFEED</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Direct contact tags -->
+                <div class="contact-details glass-card">
+                    <div class="card-topbar">
+                        <span class="folder-name"><i class="fa-solid fa-tower-broadcast"></i> signal_details.cfg</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Vansh Prakash Gupta</h3>
+                        <p class="contact-info-text">
+                            Have an exciting robotic concept, custom hardware idea, database development request, or need a developer on your team? Send a network signal right away!
+                        </p>
+                        
+                        <div class="signal-channels">
+                            <a href="mailto:guptavanshprakash@gmail.com" class="signal-channel hover-trigger">
+                                <div class="channel-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="channel-details">
+                                    <span class="chan-label">EMAIL_CHANNEL</span>
+                                    <span class="chan-data">guptavanshprakash@gmail.com</span>
+                                </div>
+                            </a>
+                            <a href="tel:+919549396933" class="signal-channel hover-trigger">
+                                <div class="channel-icon"><i class="fa-solid fa-phone"></i></div>
+                                <div class="channel-details">
+                                    <span class="chan-label">CELL_CHANNEL</span>
+                                    <span class="chan-data">+91-9549396933</span>
+                                </div>
+                            </a>
+                            <a href="https://github.com/vpg19" target="_blank" class="signal-channel hover-trigger">
+                                <div class="channel-icon"><i class="fa-brands fa-github"></i></div>
+                                <div class="channel-details">
+                                    <span class="chan-label">GITHUB_CHANNEL</span>
+                                    <span class="chan-data">github.com/vpg19</span>
+                                </div>
+                            </a>
+                            <a href="https://www.linkedin.com/in/vansh-prakash-gupta-a26076241" target="_blank" class="signal-channel hover-trigger">
+                                <div class="channel-icon"><i class="fa-brands fa-linkedin"></i></div>
+                                <div class="channel-details">
+                                    <span class="chan-label">LINKEDIN_CHANNEL</span>
+                                    <span class="chan-data">linkedin.com/in/vansh-prakash-gupta</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Network Submission Form -->
+                <div class="contact-form-panel glass-card">
+                    <div class="card-topbar">
+                        <span class="folder-name"><i class="fa-solid fa-paper-plane"></i> signal_packet_submission.sh</span>
+                        <span class="blueprint-tag" id="brevo-status-badge">BREVO_CONNECTED</span>
+                    </div>
+                    <div class="card-content">
+                        <form id="contact-form" class="futuristic-form" onsubmit="return handleFormSubmit(event);">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sender-name"><code>[SENDER_NAME]</code></label>
+                                    <input type="text" id="sender-name" name="sender-name" required placeholder="Identify sender...">
+                                </div>
+                                <div class="form-group">
+                                    <label for="sender-email"><code>[SENDER_EMAIL]</code></label>
+                                    <input type="email" id="sender-email" name="sender-email" required placeholder="Signal reply port...">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject"><code>[TRANSMISSION_SUBJECT]</code></label>
+                                <input type="text" id="subject" name="subject" required placeholder="Purpose parameter...">
+                            </div>
+                            <div class="form-group">
+                                <label for="message"><code>[PACKET_DATA_PAYLOAD]</code></label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Compile data packet..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn hover-trigger" id="submit-signal-btn">
+                                <span id="btn-text">TRANSMIT_SIGNAL()</span>
+                                <span class="btn-icon"><i class="fa-solid fa-arrow-right-long" id="btn-icon-arrow"></i></span>
+                            </button>
+                        </form>
+                        <div id="form-status-log" class="console-block hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="futuristic-footer">
+            <div class="footer-left">
+                <code>[SYS: ONLINE] [SESSION: ACTIVE]</code>
+            </div>
+            <div class="footer-center">
+                <code>© 2026 VANSH PRAKASH GUPTA. ALL PROTOCOLS ENFORCED.</code>
+            </div>
+            <div class="footer-right">
+                <code>[LOAD_FACTOR: 100%]</code>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Script file -->
+    <script src="script.js"></script>
+</body>
+</html>
