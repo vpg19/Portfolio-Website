@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         glitchElements.forEach(el => {
             el.addEventListener("mouseenter", function() {
-                const chars = "01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン";
+                const chars = "01010101_#X$/%&?";
                 let count = 0;
                 const originalText = this.getAttribute("data-value");
 
