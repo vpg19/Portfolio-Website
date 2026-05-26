@@ -229,90 +229,204 @@ document.addEventListener("DOMContentLoaded", () => {
     // 6. DYNAMIC TYPING EFFECT
     // -------------------------------------------------------------------------
     function initDynamicTyping() {
-        const typingElement = document.getElementById("dynamic-typing");
-        const phrases = [
-            ">> EMBEDDED SYSTEMS ENGINEER",
-            ">> DATA ENGINEER & ARCHITECT",
-            ">> ROBOTICS AUTOMATION SPECIALIST",
-            ">> FULL-STACK DATABASE DEVELOPER",
-            ">> NFC HARDWARE INNOVATOR"
+        const target = document.getElementById("dynamic-typing");
+        const words = [
+            "B.Tech CSE Student (AI & Robotics)",
+            "Embedded Systems Developer",
+            "Data Engineering Enthusiast",
+            "Android & Linux Club Coordinator"
         ];
-
-        let phraseIndex = 0;
+        let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
+        let delay = 100;
 
         function type() {
-            const currentPhrase = phrases[phraseIndex];
-            
-            if (!isDeleting) {
-                typingElement.textContent = currentPhrase.substring(0, charIndex + 1);
-                charIndex++;
-
-                if (charIndex === currentPhrase.length) {
-                    isDeleting = true;
-                    setTimeout(type, 2500);
-                    return;
-                }
-            } else {
-                typingElement.textContent = currentPhrase.substring(0, charIndex - 1);
+            const currentWord = words[wordIndex];
+            if (isDeleting) {
+                target.innerText = currentWord.substring(0, charIndex - 1);
                 charIndex--;
-
-                if (charIndex === 0) {
-                    isDeleting = false;
-                    phraseIndex = (phraseIndex + 1) % phrases.length;
-                    setTimeout(type, 300);
-                    return;
-                }
+                delay = 40;
+            } else {
+                target.innerText = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+                delay = 100;
             }
 
-            setTimeout(type, isDeleting ? 50 : 100);
+            if (!isDeleting && charIndex === currentWord.length) {
+                isDeleting = true;
+                delay = 2000; // Stay at the word
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                delay = 500; // Pause before typing new word
+            }
+
+            setTimeout(type, delay);
         }
 
         type();
     }
 
     // -------------------------------------------------------------------------
-    // 7. INTERACTIVE TERMINAL EMULATOR
+    // 7. INTERACTIVE UNIX SHELL CLI TERMINAL
     // -------------------------------------------------------------------------
     function initInteractiveTerminal() {
-        const terminalSection = document.getElementById("terminal-section");
-        if (!terminalSection) return; // Skip if section doesn't exist
+        const terminal = document.getElementById("interactive-terminal");
+        const terminalBody = document.getElementById("terminal-body");
+        const terminalHistory = document.getElementById("terminal-history");
+        const terminalInput = document.getElementById("terminal-input");
 
-        const terminalLines = terminalSection.querySelectorAll(".terminal-line");
-        terminalLines.forEach((line, index) => {
-            line.style.opacity = "0";
-            line.style.transform = "translateY(10px)";
-            line.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+        if (!terminal || !terminalInput) return; // Skip if elements don't exist
 
-            setTimeout(() => {
-                line.style.opacity = "1";
-                line.style.transform = "translateY(0)";
-            }, 200 + index * 100);
+        // Focus input on terminal area click
+        terminal.addEventListener("click", () => {
+            terminalInput.focus();
         });
+
+        // Command interpreter
+        terminalInput.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                const command = terminalInput.value.trim().toLowerCase();
+                terminalInput.value = "";
+                
+                // Add input to history log
+                const cmdLog = document.createElement("div");
+                cmdLog.className = "command-log";
+                cmdLog.innerHTML = `<span class="prompt-user">vansh@vpg-sys:~$</span> ${command}`;
+                terminalHistory.appendChild(cmdLog);
+
+                // Interpret command
+                const resultLog = document.createElement("div");
+                resultLog.className = "result-log";
+                resultLog.innerHTML = processCommand(command);
+                terminalHistory.appendChild(resultLog);
+
+                // Auto Scroll to bottom
+                terminalBody.scrollTop = terminalBody.scrollHeight;
+            }
+        });
+
+        function processCommand(cmd) {
+            switch (cmd) {
+                case "":
+                    return "";
+                case "help":
+                    return `
+Available commands:
+  <span class="highlight-green">about</span>      - Print biography metadata
+  <span class="highlight-green">skills</span>     - Display formatted skills registry
+  <span class="highlight-green">projects</span>   - Print repositories folder-tree structure
+  <span class="highlight-green">patent</span>     - Output NFC-Enabled Wireless Mouse specs
+  <span class="highlight-green">education</span>  - Print academic history records
+  <span class="highlight-green">contact</span>    - List network broadcast details
+  <span class="highlight-green">clear</span>      - Clear console shell screen
+  <span class="highlight-green">help</span>       - Display this assistance list
+`;
+                case "about":
+                    return `
+BIO RECORDS FOR VANSH PRAKASH GUPTA:
+---------------------------------------------
+Student Node  : Vellore Institute of Technology, Chennai
+Department    : Computer Science & Engineering (AI & Robotics)
+Academic Year : 2nd Year (Sophomore)
+Core Passion  : Bridging data science paradigms with embedded environments.
+                Passionate about data pipeline automation and robotics.
+`;
+                case "skills":
+                    return `
++------------------------+------------------------------------------+
+| CATEGORY GROUP         | REGISTERED TECHNOLOGIES                  |
++------------------------+------------------------------------------+
+| Programming Languages  | Python, C/C++, Java                      |
+| Databases & Backend    | MySQL, PostgreSQL, Flask                 |
+| Embedded Systems       | Arduino, ESP32, RFID/NFC, BLE, C++       |
+| Systems & Testing      | Linux, Windows, Selenium, BeautifulSoup   |
++------------------------+------------------------------------------+
+`;
+                case "projects":
+                    return `
+vpg19/ (GitHub Repositories)
+├── <span class="highlight-green">departmental-store-management</span> (Python, MySQL, Matplotlib)
+│   └── Built full-stack inventory application & analytics dashboard.
+├── <span class="highlight-green">top-100-playlist-generator</span>    (Python, Spotipy API, BeautifulSoup)
+│   └── Scraping Billboard and auto-generating private Spotify lists.
+├── <span class="highlight-green">match_game</span>                    (Flutter, Dart)
+│   └── Interactive card match memory mobile application.
+├── <span class="highlight-green">password-manager</span>              (Python, Tkinter)
+│   └── Graphical secure local credentials vault.
+├── <span class="highlight-green">cookie-clicker-bot</span>            (Python, Selenium)
+│   └── Automated gaming mouse triggers based on optimization cycles.
+└── <span class="highlight-green">pomodoro-timer</span>                (Python, Tkinter)
+    └── Productivity workflow countdown tool.
+`;
+                case "patent":
+                    return `
+PATENT RECORD DIAGNOSTICS:
+---------------------------------------------
+Title       : NFC-Enabled Wireless Mouse
+Status      : Patent Pending // Technical docs submitted
+Processor   : ESP32 WROOM-32E MCU
+Peripherals : RC522 SPI NFC module, Ntag213 memory units
+Protocol    : Dual BLE HID mouse + SPI tag memory updater
+Daemon      : Back-end Python system clipboard monitor
+Operation   : Direct string data transmission into mouse NFC chip
+              for high-speed local device synchronization.
+`;
+                case "education":
+                    return `
+ACADEMIC HISTORY:
+---------------------------------------------
+2024 - 2028: Vellore Institute of Technology, Chennai
+             B.Tech Computer Science & Engineering (AI & Robotics)
+             Current Cumulative GPA: 8.86 / 10.0
+
+2012 - 2024: St. Xavier's Senior Secondary School, Jaipur
+             Senior Secondary (12th Grade): 91%
+             Higher Secondary (10th Grade): 87.2%
+`;
+                case "contact":
+                    return `
+SIGNAL ROUTING PARAMETERS:
+---------------------------------------------
+Email Port    : guptavanshprakash@gmail.com
+Cell Line     : +91-9549396933
+GitHub Link   : https://github.com/vpg19
+LinkedIn Link : https://linkedin.com/in/vansh-prakash-gupta-a26076241
+`;
+                case "clear":
+                    terminalHistory.innerHTML = "";
+                    return "Terminal history records purged.";
+                default:
+                    return `Command not found: <span class="error">${cmd}</span>. Type <span class="highlight-green">help</span> to list commands.`;
+            }
+        }
     }
 
     // -------------------------------------------------------------------------
-    // 8. BLUEPRINT INTERACTIVITY (SPEC TABS)
+    // 8. PATENT BLUEPRINT WIREFRAME INTERACTIONS & TABS
     // -------------------------------------------------------------------------
     function initBlueprintInteractivity() {
-        const specTabs = document.querySelectorAll(".spec-tab");
-        const specPanels = document.querySelectorAll(".spec-panel");
+        const specContent = document.getElementById("patent-spec-content");
+        const hotspots = document.querySelectorAll(".hotspot");
+        const tabButtons = document.querySelectorAll(".spec-tab");
+        const tabContents = document.querySelectorAll(".tab-content");
 
-        specTabs.forEach(tab => {
-            tab.addEventListener("click", (e) => {
-                e.preventDefault();
+        if (!tabButtons.length) return; // Skip if no tabs found
 
-                const targetTab = tab.getAttribute("data-tab");
+        // Tab click interactions
+        tabButtons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const targetTab = btn.getAttribute("data-tab");
                 
-                // Remove active from all tabs in this blueprint
-                const blueprintContainer = tab.closest(".blueprint-specs");
-                blueprintContainer.querySelectorAll(".spec-tab").forEach(t => t.classList.remove("active"));
-                blueprintContainer.querySelectorAll(".spec-panel").forEach(p => p.classList.remove("active"));
-
-                // Add active to clicked tab and corresponding panel
-                tab.classList.add("active");
-                document.getElementById(targetTab).classList.add("active");
+                tabButtons.forEach(b => b.classList.remove("active"));
+                tabContents.forEach(c => c.classList.remove("active"));
+                
+                btn.classList.add("active");
+                const targetContent = document.getElementById(`tab-${targetTab}`);
+                if (targetContent) {
+                    targetContent.classList.add("active");
+                }
             });
         });
     }
