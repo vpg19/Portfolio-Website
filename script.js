@@ -475,7 +475,7 @@ async function sendEmail(senderName, senderEmail, subject, message) {
     // Sign up at https://web3forms.com to get your access key
     
     const payload = {
-        access_key: "YOUR_WEB3FORMS_KEY", // Replace with your Web3Forms key from https://web3forms.com
+        access_key: "fd5baab0-79eb-490d-a6f3-1e5ab7717754", // Replace with your Web3Forms key from https://web3forms.com
         name: senderName,
         email: senderEmail,
         subject: `[VPG Portfolio] ${subject}`,
