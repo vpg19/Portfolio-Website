@@ -108,8 +108,8 @@
                 <div class="panel-body">
                     <div class="dashboard-metric">
                         <span class="metric-label">SYS_LOAD:</span>
-                        <div class="metric-bar"><div class="bar-fill" style="width: 89.1%;"></div></div>
-                        <span class="metric-value">VIT CGPA: 8.91</span>
+                        <div class="metric-bar"><div class="bar-fill" style="width: 89.2%;"></div></div>
+                        <span class="metric-value">VIT CGPA: 8.92</span>
                     </div>
                     <div class="dashboard-metric">
                         <span class="metric-label">DATABASE:</span>
@@ -157,7 +157,7 @@
                             <div class="detail-item"><strong>[LOC]</strong> Chennai / Jaipur, India</div>
                             <div class="detail-item"><strong>[ROLE]</strong> Full-Stack Automation & Embedded Developer</div>
                             <div class="detail-item"><strong>[EDU]</strong> CSE (AI & Robotics) @ VIT</div>
-                            <div class="detail-item"><strong>[GPA]</strong> 8.91 / 10.0</div>
+                            <div class="detail-item"><strong>[GPA]</strong> 8.92 / 10.0</div>
                         </div>
                     </div>
                 </div>
@@ -174,7 +174,7 @@
                                 <div class="timeline-date">2024 - 2028</div>
                                 <div class="timeline-title">B.Tech in Computer Science & Engineering (AI & Robotics)</div>
                                 <div class="timeline-institution">Vellore Institute of Technology, Chennai</div>
-                                <p class="timeline-desc">Secured CGPA: 8.91/10. Active learning in Algorithms, Python data visualization, SQL Databases, and robotic controls.</p>
+                                <p class="timeline-desc">Secured CGPA: 8.92/10. Active learning in Algorithms, Python data visualization, SQL Databases, and robotic controls.</p>
                             </div>
                             <div class="timeline-item">
                                 <div class="timeline-dot"></div>
@@ -414,11 +414,64 @@ void setup() {
                 <button class="filter-btn" data-filter="embedded">EMBEDDED</button>
                 <button class="filter-btn" data-filter="dart">DART/FLUTTER</button>
                 <button class="filter-btn" data-filter="automation">AUTOMATION</button>
+                <button class="filter-btn" data-filter="ai">AI / ML</button>
             </div>
 
             <!-- Projects Cards Deck -->
             <div class="projects-grid">
-                <!-- Project 1: Store Management -->
+
+                <!-- Project 1: LeadFlow AI -->
+                <div class="project-card glass-card" data-languages="python ai automation">
+                    <div class="card-topbar">
+                        <span class="folder-name"><i class="fa-solid fa-brain"></i> lead-flow-ai</span>
+                        <span class="lang-tag">python // ai // crm</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="proj-title">LeadFlow AI — CRM Platform</h3>
+                        <p class="proj-desc">
+                            An AI-powered Customer Relationship Management platform designed to help sales teams manage leads, automate follow-ups, and generate AI-driven insights — all from a single dashboard. Features intelligent lead scoring and automated pipeline management.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="t-tag">Python</span>
+                            <span class="t-tag">AI / ML</span>
+                            <span class="t-tag">CRM</span>
+                            <span class="t-tag">Dashboard</span>
+                            <span class="t-tag">Automation</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/vpg19/Lead-Flow-AI" target="_blank" class="github-link hover-trigger">
+                                <i class="fa-brands fa-github"></i> VIEW_SOURCE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Portfolio Website ChatBot -->
+                <div class="project-card glass-card" data-languages="python ai automation">
+                    <div class="card-topbar">
+                        <span class="folder-name"><i class="fa-solid fa-comments"></i> portfolio-chatbot</span>
+                        <span class="lang-tag">python // ai // chatbot</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="proj-title">Portfolio Website ChatBot</h3>
+                        <p class="proj-desc">
+                            An intelligent chatbot integrated into a portfolio website, enabling visitors to interact with an AI assistant that answers questions about skills, projects, experience, and contact information in real time through natural conversation.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="t-tag">Python</span>
+                            <span class="t-tag">AI ChatBot</span>
+                            <span class="t-tag">NLP</span>
+                            <span class="t-tag">Web Integration</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/vpg19/Portfolio-Website-ChatBot" target="_blank" class="github-link hover-trigger">
+                                <i class="fa-brands fa-github"></i> VIEW_SOURCE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Store Management -->
                 <div class="project-card glass-card" data-languages="python">
                     <div class="card-topbar">
                         <span class="folder-name"><i class="fa-solid fa-box-archive"></i> store-management-sys</span>
@@ -443,7 +496,7 @@ void setup() {
                     </div>
                 </div>
 
-                <!-- Project 2: Spotify Playlist Generator -->
+                <!-- Project 4: Spotify Playlist Generator -->
                 <div class="project-card glass-card" data-languages="python automation">
                     <div class="card-topbar">
                         <span class="folder-name"><i class="fa-solid fa-music"></i> top-100-playlist-gen</span>
@@ -468,7 +521,7 @@ void setup() {
                     </div>
                 </div>
 
-                <!-- Project 3: Match Game -->
+                <!-- Project 5: Match Game -->
                 <div class="project-card glass-card" data-languages="dart">
                     <div class="card-topbar">
                         <span class="folder-name"><i class="fa-solid fa-gamepad"></i> memory-match-game</span>
@@ -493,7 +546,7 @@ void setup() {
                     </div>
                 </div>
 
-                <!-- Project 4: Password Manager -->
+                <!-- Project 6: Password Manager -->
                 <div class="project-card glass-card" data-languages="python">
                     <div class="card-topbar">
                         <span class="folder-name"><i class="fa-solid fa-key"></i> local-password-mgr</span>
@@ -518,7 +571,7 @@ void setup() {
                     </div>
                 </div>
 
-                <!-- Project 5: Cookie Clicker Bot -->
+                <!-- Project 7: Cookie Clicker Bot -->
                 <div class="project-card glass-card" data-languages="python automation">
                     <div class="card-topbar">
                         <span class="folder-name"><i class="fa-solid fa-robot"></i> clicker-automation-bot</span>
@@ -543,7 +596,7 @@ void setup() {
                     </div>
                 </div>
 
-                <!-- Project 6: Pomodoro Timer -->
+                <!-- Project 8: Pomodoro Timer -->
                 <div class="project-card glass-card" data-languages="python automation">
                     <div class="card-topbar">
                         <span class="folder-name"><i class="fa-solid fa-hourglass-half"></i> pomodoro-productivity</span>
