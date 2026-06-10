@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { text: "RESOLVING IP PORT... 172.16.42.99 (SECURE SHIELD ACTIVE)", class: "cyan" },
         { text: "RETRIEVING PROFILE METADATA...", class: "" },
         { text: "USER DETECTED: Vansh Prakash Gupta (B.Tech CSE - 2nd Year)", class: "success" },
-        { text: "READING ACADEMIC RECORDS... CGPA 8.91/10", class: "cyan" },
+        { text: "READING ACADEMIC RECORDS... CGPA 8.92/10", class: "cyan" },
         { text: "PARSING PATENT RECORDS... PATENT_PENDING // ID: NFC-WM-2026", class: "warning" },
         { text: "NFC WIRELESS MOUSE DIAGNOSTIC: ESP32 Core HID + RC522 SPI Active", class: "success" },
         { text: "COMPILING SKILL MATRICES... PYTHON (95%) | C/C++ (85%) | JAVA (80%)", class: "" },
@@ -379,7 +379,7 @@ ACADEMIC HISTORY:
 ---------------------------------------------
 2024 - 2028: Vellore Institute of Technology, Chennai
              B.Tech Computer Science & Engineering (AI & Robotics)
-             Current Cumulative GPA: 8.91 / 10.0
+             Current Cumulative GPA: 8.92 / 10.0
 
 2012 - 2024: St. Xavier's Senior Secondary School, Jaipur
              Senior Secondary (12th Grade): 91%
