@@ -347,6 +347,10 @@ Core Passion  : Bridging data science paradigms with embedded environments.
                 case "projects":
                     return `
 vpg19/ (GitHub Repositories)
+├── <span class="highlight-green">lead-flow-ai</span> (Python, TypeScript)
+│   └── An AI-powered Customer Relationship Management platform.
+├── <span class="highlight-green">portfolio-website-chatbot</span> (Python, Langchain, LangGraph, LLM)
+│   └── An intelligent chatbot integrated into a portfolio website.
 ├── <span class="highlight-green">departmental-store-management</span> (Python, MySQL, Matplotlib)
 │   └── Built full-stack inventory application & analytics dashboard.
 ├── <span class="highlight-green">top-100-playlist-generator</span>    (Python, Spotipy API, BeautifulSoup)
