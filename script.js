@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { text: "CONNECTING TO VIT-CHENNAI CSE ROBOTICS CORE NODE-1...", class: "" },
         { text: "RESOLVING IP PORT... 172.16.42.99 (SECURE SHIELD ACTIVE)", class: "cyan" },
         { text: "RETRIEVING PROFILE METADATA...", class: "" },
-        { text: "USER DETECTED: Vansh Prakash Gupta (B.Tech CSE - 2nd Year)", class: "success" },
+        { text: "USER DETECTED: Vansh Prakash Gupta (B.Tech CSE - 3rd Year)", class: "success" },
         { text: "READING ACADEMIC RECORDS... CGPA 8.92/10", class: "cyan" },
         { text: "PARSING PATENT RECORDS... PATENT_PENDING // ID: NFC-WM-2026", class: "warning" },
         { text: "NFC WIRELESS MOUSE DIAGNOSTIC: ESP32 Core HID + RC522 SPI Active", class: "success" },
@@ -329,7 +329,7 @@ BIO RECORDS FOR VANSH PRAKASH GUPTA:
 ---------------------------------------------
 Student Node  : Vellore Institute of Technology, Chennai
 Department    : Computer Science & Engineering (AI & Robotics)
-Academic Year : 2nd Year (Sophomore)
+Academic Year : 3rd Year (Junior)
 Core Passion  : Bridging data science paradigms with embedded environments.
                 Passionate about data pipeline automation and robotics.
 `;
